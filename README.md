@@ -123,6 +123,43 @@ Make sure to update your packages:
 pkg up
 ```
 
+## Docker
+
+Clone repo
+
+```
+git clone https://github.com/gregford117/ani-cli
+```
+
+Build image
+
+```
+docker build --tag local/ani-cli .
+```
+
+Start Container
+
+Interactive:
+```
+docker run -v "$(pwd):/download" -it local/ani-cli
+```
+
+With Args:
+
+Usage:
+```
+docker run -v "$(pwd):/download" -it local/ani-cli "<query>" "<show name>" "<season name>" "<starting episode>" "<ending episode>"
+```
+Example:
+```
+docker run -v "$(pwd):/download" -it local/ani-cli "Spy X Family" " Spy X Family" "Season One" "1" "8"
+```
+
+Without Args:
+```
+docker run -v "$(pwd):/download" -t local/ani-cli
+```
+
 ## Uninstall
 
 * Arch Linux: ```yay -R ani-cli```
@@ -130,6 +167,7 @@ pkg up
 * Mac: Just remove the thing from path
 * Windows: ```scoop uninstall ani-cli```
 * Android: Just remove the thing from path
+* Docker: remove local git repo and `docker rmi local/ani-cli`
 
 ## Dependencies
 
@@ -141,6 +179,8 @@ pkg up
 - mpv - Video Player
 - aria2 - Download manager
 - ffmpeg - m3u8 Downloader
+- Docker (optional)
+- git (optional)
 
 ## Homies 
 
