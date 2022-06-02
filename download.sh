@@ -18,9 +18,9 @@ else
     download_folder=$DOWNLOAD_DIR/$folder_name
 
     # builds space delimited list of all epsiodes in the range of start to end
-    epsiodes="$(seq -s ' ' $start_episode $start_episode)"
+    episodes="$(seq -s ' ' $start_episode $end_episode)"
     # downloads the query results to new folder
-    ani-cli -a "$epsiodes" -p "${DOWNLOAD_DIR}/${folder_name}" "${query}"
+    ani-cli -a "$episodes" -p "${DOWNLOAD_DIR}/${folder_name}" "${query}"
 
 
     # rename all the new files
